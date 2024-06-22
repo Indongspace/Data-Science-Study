@@ -1,0 +1,5 @@
+# touch 명령어로 파일 만들기
+$ ls             <- 파일이 없음
+$ touch newfile  <- 파일 생성
+$ ls
+newfile          <- newfile이라는 파일이 생성됨

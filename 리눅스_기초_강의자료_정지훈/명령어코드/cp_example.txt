@@ -1,0 +1,56 @@
+# <-------------------------------------->
+# 파일/디렉터리 복사
+$ touch file1                <- file1 만들기
+$ cp file1 file2             <- file1을 file2로 복사하기
+$ ls -F
+dir1/ file1 file2            <- file2가 만들어졌는지 확인 
+
+# <-------------------------------------->
+# 파일을 특정 디렉터리 안에 복사하기
+$ cp file1 dir1 
+$ ls dir1
+file1       <- 복사됨
+
+# <-------------------------------------->
+# 여러 파일을 지정한 디렉터리 안에 복사하기
+$ touch file3                         <- file3 만들기
+$ mkdir dir2                          <- dir2 디렉터리 만들기
+$ cp file1 file2 file3 dir2           <- dir2에 파일 세 개 복사하기
+$ ls dir2
+file1 file2 file3
+
+# <-------------------------------------->
+# 여러 파일을 한꺼번에 복사할 때
+$ cp *.txt backupdir
+
+# <-------------------------------------->
+# 복사와 덮어쓰기
+$ cp file1 file2    <- file1을 file2라는 이름으로 복사하기
+$                   <- 아무런 경고도 없이 file2의 내용이 없어지고 file1의 내용이 복사됨
+
+# cp 명령어가 덮어쓰기 전에 -i 옵션 사용
+# cp 명령어가 덮어쓰기 전에 확인하도록 하려면 -i 옵션 사용해야 함
+$ cp -i file1 file2  <- cp 명령어에 -i 옵션 지정해 실행, y 입력
+
+# <-------------------------------------->
+# 디렉터리 복사하기 : cp 명령어로 디렉터리를 복사하려고 하면 에러가 발생함
+# 실습 시, 출력물이 동일하지 않다면, mkdir 또는 touch 명령어 이용하여 파일 및 디렉터리 생성
+$ cp dir2 dir3 
+cp: -r not specified; omitting directory 'dir2'
+
+$ ls -F 
+dir1/ dir2/ file1 file2 file3  <- 현재 dir3라는 디렉터리는 없음
+
+$ ls dir2 
+file1 file2 file3   <- -r 옵션을 지정하여 dir3으로 복사
+
+$ cp -r dir2 dir3 
+$ ls dir3
+file1 file2 file3
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+# <---------------------------------->
+# Locate Version
+$ locate --version
+Command 'locate' not found, but can be installed with:
+apt install plocate
+Please ask your administrator.
+
+$ sudo apt-get install mlocate             <- 설치
+$ sudo updatedb                            <- 데이터베이스 구축
+/snap/core20/2264/usr/share/bash-completion/completions/composite
+/snap/core20/2264/usr/share/bash-completion/completions/config_list
+/snap/core20/2264/usr/share/bash-completion/completions/configure
+/snap/core20/2264/usr/share/bash-completion/completions/conjure
+/snap/core20/2264/usr/share/bash-completion/completions/convert
+...생략...
+
+# <---------------------------------->
+# 다양한 검색 방법 지정
+# 확장자 .sed인 파일 검색
+$ locate '*.sed'
+
+# <---------------------------------->
+# 대소문자 구분 없이 검색
+# -i 혹은 --ignore-case 옵션 지정
+$ locate -i notes 
+
+# <---------------------------------->
+# 파일 이름만으로 검색
+# -b 혹은 --basename 옵션 지정
+$ locate -b python
+
+# <---------------------------------->
+# 여러 검색 패턴 지정
+# 검색 패턴 여러 개 지정 시, OR 조건이 적용되어 지정한 패턴 중 하나라도 일치하는 파일 출력
+# docs혹은 document를 포함하는 파일 검색하는 예
+$ locate docs document
+
+# AND 조건으로 여러 검색 문자열 검색
+$ locate -A bash doc
+
+
+
+
+
+

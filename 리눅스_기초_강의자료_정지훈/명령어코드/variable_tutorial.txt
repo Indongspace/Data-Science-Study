@@ -1,0 +1,6 @@
+# 셸 변수 var1에 값 설정
+$ var1 = 'test variable'
+
+# 셸 변수 var의 값 확인 
+$echo $var1
+test variable

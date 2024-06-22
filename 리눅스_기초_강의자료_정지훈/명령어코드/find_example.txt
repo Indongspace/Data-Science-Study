@@ -1,0 +1,27 @@
+# <------------------------------->
+# find 명령어 예
+$ mkdir -p dir1/doc
+$ touch file-1.txt dir1/doc/file-1.txt
+$ find . -name file-1.txt -print
+./file-1.txt                        <- 지정한 디렉터리 트리를 내려가면서 검색 조건에 일치하는 파일 검색
+./dir1/doc/file-1.txt
+
+# <------------------------------->
+# find 실행된 명령어
+$ find -name *.txt -print
+find: paths must precede expression: `reamdme.txt'
+find: possible unquoted pattern after predicate `-name'?
+
+# 이러한 에러를 방지하려면 * 또는 ? 포함할 때는 '또는' 감싸면 됩니다. 
+$ find -name '*.txt' -print
+./file-1.txt
+./reamdme.txt
+./dir1/doc/file-1.txt
+
+# <------------------------------->
+# find 실행된 명령어
+$ find . -type d -print
+.
+./.ssh
+./.cache
+./dir1
